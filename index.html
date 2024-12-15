@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+		山本HG
+		</title>
+	</head>
+	<body>
+プログラム<br>
+<hr>
+int m=20;<br>
+int[]x=new int[m];<br>
+int[]y=new int[m];<br>
+int i=0;<br>
+void setup(){<br>
+  size(300,300);<br>
+  background(255);<br>
+}<br>
+<br>
+void draw(){<br>
+  if(keyPressed==true){<br>
+    if(key=='p'){<br>
+      print("始点を記録します  ");<br>
+      x[i]=mouseX;<br>
+      y[i]=mouseY;<br>
+      println(x[i],y[i]);<br>
+      i=i+1;<br>
+      delay(1500);<br>
+    }<br>
+    else if(key=='q'){<br>
+      print("終点を記録します  ");<br>
+      x[i]=mouseX;<br>
+      y[i]=mouseY;<br>
+      println(x[i],y[i]);<br>
+      i=i+1;<br>
+      delay(1500);<br>
+    }<br>
+    else if(key=='g'){<br>
+      print(i);<br>
+      print("線を描きます  ");<br>
+      println("座標は",x[i-2],y[i-2],x[i-1],y[i-1],"です");<br>
+      line(x[i-2],y[i-2],x[i-1],y[i-1]);<br>
+      delay(1000);<br>
+    }<br>
+    else if(key=='f'){<br>
+      for(i=0;i<=m;i=i+2){<br>
+        println("line(",x[i],y[i],x[i+1],y[i+1],")");<br>
+        delay(500);<br>
+      }<br>
+    }<br>
+  } <br>
+}<br>
+<hr>
+使い方<br>
+mに画数を代入する<br>
+マウスを始める位置に持っていき、キーボードのPを押す<br>
+マウスを終わりの位置に持っていき、キーボードのQを押す<br>
+PとQを一回ずつ押したら、Gを押すと線が描ける<br>
+最後にキーボードのFを押すと線の座標がコンソールに表示される<br>
+  	</body>
+</html>
